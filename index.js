@@ -3,17 +3,17 @@ window.onload = function () {
     let row, col;
     let maxSteps = 20; // 设置步数限制
     let stepsLeft = maxSteps;
+    let matchedPairs = 0; // 计数器
+    let flag = 0;
+    let first, second;
+    let table = document.getElementById("table");
+    let outer = document.getElementById("outer");
+
+    // 创建步数显示元素
     let stepsDisplay = document.createElement("div");
     stepsDisplay.id = "stepsDisplay";
-    stepsDisplay.style.margin = "20px";
-    stepsDisplay.style.position = "fixed";
-    stepsDisplay.style.bottom = "0";
-    stepsDisplay.style.width = "100%";
-    stepsDisplay.style.textAlign = "center";
-    stepsDisplay.style.backgroundColor = "#f0f0f0";
     document.body.appendChild(stepsDisplay);
     updateStepsDisplay();
-    let matchedPairs = 0; // 计数器
 
     for (let i = 0; i < diff.length; i++) {
         diff[i].onclick = function () {
@@ -25,6 +25,7 @@ window.onload = function () {
             this.style.border = "3px solid blue";
             row = row + parseInt(this.id.substring(4));
             col = col + parseInt(this.id.substring(4));
+            document.documentElement.style.setProperty('--col', col);
             console.log(row, col);
             creatSection();
             initpicArr();
@@ -35,18 +36,14 @@ window.onload = function () {
         }
     }
 
-    let table = document.getElementById("table");
     function creatSection() {
         table.innerHTML = "";
         for (let i = 0; i < row; i++) {
             let tr = document.createElement("tr");
             table.appendChild(tr);
-            tr.style.height = "80px";
             for (let j = 0; j < col; j++) {
                 let td = document.createElement('td');
                 tr.appendChild(td);
-                td.style.width = "80px";
-                td.style.border = "1px solid black";
                 td.id = "td" + i + j; //与数组图片对应下标
                 td.style.background = "url(./img/back.png)";
                 td.style.backgroundSize = "100% 100%";
@@ -97,10 +94,6 @@ window.onload = function () {
             }
         }, 3000);
     }
-
-    let outer = document.getElementById("outer");
-    let flag = 0;
-    let first, second;
 
     function playGame() {
         let allTD = document.getElementsByTagName("td");
@@ -156,7 +149,7 @@ window.onload = function () {
 
     function checkGameComplete() {
         if (matchedPairs === (row * col) / 2) {
-            alert("你过关！");
+            alert("恭喜你，通关了！");
         }
     }
 
