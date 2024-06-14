@@ -149,7 +149,7 @@ window.onload = function () {
 
     function checkGameComplete() {
         if (matchedPairs === (row * col) / 2) {
-            alert("恭喜你，通关了！");
+            alert("你过关！");
         }
     }
 
