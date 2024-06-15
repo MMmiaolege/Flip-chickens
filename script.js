@@ -188,7 +188,7 @@ function compare() {
                 if (matchedPairs == (row * col) / 2) {
                     let memoryTime = Math.floor((memoryEndTime - memoryStartTime) / 1000);
                     let score = difficultyScore - memoryTime + stepsLeft;
-                    alert(`恭喜你通关了！你的得分是：${score}`);
+                    alert(`你过关！你的得分是：${score}`);
                     let playerName = prompt("请输入你的名字：");
                     saveScore(playerName, score, difficulty);
                     updateLeaderboardDisplay();
