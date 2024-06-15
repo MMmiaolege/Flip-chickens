@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.one {
+    margin: 20px;
+}
+
+.hh {
+    margin: 20px 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#selete {
+    margin-bottom: 20px;
+}
+
+.diff {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.diff:hover {
+    background-color: #ddd;
+}
+
+.diff:active {
+    background-color: #bbb;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#stepsDisplay {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#memoryButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#leaderboardDisplay {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#leaderboardDisplay h2 {
+    margin-bottom: 10px;
+}
+
+#leaderboardDisplay ol {
+    padding-left: 20px;
+}
+
+#leaderboardDisplay li {
+    margin-bottom: 5px;
+}
+
+#leaderboardDisplay button {
+    margin-left: 10px;
+    padding: 2px 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Ensure images keep their aspect ratio */
+td {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    td {
+        width: calc(100vw / var(--col));
+        height: calc(100vw / var(--col));
+    }
+
+    #memoryButton, #stepsDisplay {
+        font-size: 14px;
+    }
+
+    .diff {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
